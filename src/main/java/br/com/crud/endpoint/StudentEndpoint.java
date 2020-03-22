@@ -3,16 +3,13 @@ package br.com.crud.endpoint;
 import br.com.crud.error.ResourceNotFoundException;
 import br.com.crud.model.Student;
 import br.com.crud.repository.StudentRepository;
-//import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-//import org.springframework.security.core.Authentication;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 
 /**
  * @author joao4018 22/03/20.

@@ -13,7 +13,6 @@ public class Student extends AbstractEntity {
     @NotEmpty(message = "O campo nome do estudante é obrigatório")
     private String name;
     @NotEmpty
-    @Email(message = "Digite um email válido")
     private String email;
 
     public Student() {
