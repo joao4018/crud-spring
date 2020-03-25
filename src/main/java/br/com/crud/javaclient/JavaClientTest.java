@@ -15,10 +15,10 @@ public class JavaClientTest {
     public static void main(String[] args) {
         HttpURLConnection connection = null;
         BufferedReader reader = null;
-        String user = "toyo";
-        String password = "devdojo";
+        String user = "bolachao";
+        String password = "passwordFotCryptHere";
         try {
-            URL url = new URL("http://localhost:8080/v1/protected/students/1");
+            URL url = new URL("http://localhost:8080/v1/protected/students/3");
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.addRequestProperty("Authorization", "Basic " + encodeUsernamePassword(user, password));

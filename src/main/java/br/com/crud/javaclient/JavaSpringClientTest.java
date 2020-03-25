@@ -18,7 +18,7 @@ public class JavaSpringClientTest {
 //        System.out.println(students);
 //        System.out.println(dao.save(studentPost));
 //        dao.update(studentPost);
-        dao.delete(29);
+        dao.delete(3);
 
     }
 
