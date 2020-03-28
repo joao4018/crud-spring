@@ -4,6 +4,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
 
 /**
  * @author Joao4018 25/03/2020.
@@ -17,7 +18,7 @@ public class User extends AbstractEntity {
     private String password;
     @NotEmpty
     private String name;
-    @NotEmpty
+    @NotNull
     private boolean admin;
 
     public String getUsername() {

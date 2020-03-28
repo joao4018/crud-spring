@@ -7,7 +7,7 @@ public class SecurityConstants {
     static final String SECRET = "treino";
     static final String TOKEN_PREFIX = "Bearer ";
     static final String HEADER_STRING = "Authorization";
-    static final String SIGN_UP_URL = "futura url de signup";
+    static final String SIGN_UP_URL = "/signup";
     static final long EXPIRATION_TIME = 86400000L;
 
 //    public static void main(String[] args) {
