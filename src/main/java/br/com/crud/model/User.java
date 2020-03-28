@@ -1,5 +1,7 @@
 package br.com.crud.model;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Column;
@@ -10,8 +12,10 @@ import javax.validation.constraints.NotNull;
  * @author Joao4018 25/03/2020.
  */
 @Entity
+@Getter
+@Setter
 public class User extends AbstractEntity {
-    @NotEmpty
+    @NotEmpty(message = "O campo username do usuario é obrigatório")
     @Column(unique = true)
     private String username;
     @NotEmpty
@@ -20,36 +24,4 @@ public class User extends AbstractEntity {
     private String name;
     @NotNull
     private boolean admin;
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public boolean isAdmin() {
-        return admin;
-    }
-
-    public void setAdmin(boolean admin) {
-        this.admin = admin;
-    }
 }
