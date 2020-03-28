@@ -5,6 +5,7 @@ import br.com.crud.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,7 +32,10 @@ public class UserEndPoint {
     @PostMapping(path = "signup")
     @Transactional(rollbackFor = Exception.class)
     public ResponseEntity<?> save(@Valid @RequestBody User user) {
-        return new ResponseEntity<>(userDAO.save(user), HttpStatus.CREATED);
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String password =  passwordEncoder.encode(user.getPassword());
+        User userSignup = new User(user.getUsername(),password,user.getName(),user.isAdmin());
+        return new ResponseEntity<>(userDAO.save(userSignup), HttpStatus.CREATED);
     }
 
 }
